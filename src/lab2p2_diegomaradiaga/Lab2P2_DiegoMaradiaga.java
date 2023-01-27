@@ -1,5 +1,6 @@
 package lab2p2_diegomaradiaga;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab2P2_DiegoMaradiaga {
@@ -7,6 +8,8 @@ public class Lab2P2_DiegoMaradiaga {
     static Scanner leer = new Scanner(System.in);
     public static void main(String[] args) {
         int opcion;
+        ArrayList lista = new ArrayList();
+        ArrayList usuarios = new ArrayList();
         do{
             System.out.println("--------------------------------------------");
             System.out.println(">>>>>>>   Inmbobilaria BLACK_FLOYD   <<<<<<<");
@@ -25,7 +28,16 @@ public class Lab2P2_DiegoMaradiaga {
                 case 1:{ 
                     
                 }
-            }
+                case 2:{ 
+                    
+                }
+                case 3:{ 
+                    
+                }
+                default:{
+                    System.exit(0);
+                }
+            }//Fin switch
         }while(opcion!=4);
     }
     

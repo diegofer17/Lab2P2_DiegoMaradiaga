@@ -12,7 +12,7 @@ public class Lab2P2_DiegoMaradiaga {
     public static void main(String[] args) {
         int opcion;
         ArrayList lista = new ArrayList();
-        ArrayList usuarios = new ArrayList();
+        ArrayList <Usuario> usuarios = new ArrayList();
         do {
             System.out.println("--------------------------------------------");
             System.out.println(">>>>>>>   Inmbobilaria BLACK_FLOYD   <<<<<<<");
@@ -32,7 +32,7 @@ public class Lab2P2_DiegoMaradiaga {
                     System.out.println("1. Crear Casas/Edificios/Solares");
                     System.out.println("2. Listar Casas/Edificios/Solares");
                     System.out.println("3. Modificar Casas/Edificios/Solares");
-                    System.out.println("4. Vender Casas/Edificios/Solares");
+                    System.out.println("4. Comprar Casas/Edificios/Solares");
                     System.out.println("");
                     System.out.print("Ingrese su opcion: ");
                     opcionc1 = leer.nextInt();
@@ -59,7 +59,7 @@ public class Lab2P2_DiegoMaradiaga {
                             break;
                         case 2:
                             int opcionLedificaciones = 0;
-                            System.out.println("Que desea listar (1. Casa/ 2. Edificio/ 3. Solar? ");
+                            System.out.println("Que desea listar (1. Casa/ 2. Edificio/ 3. Solar / 4.TODO? ");
                             opcionLedificaciones = leer.nextInt();
                             switch(opcionLedificaciones){
                                 case 1:
@@ -86,12 +86,45 @@ public class Lab2P2_DiegoMaradiaga {
                                         }
                                     }
                                 break;
+                                case 4:
+                                    String salida4 = "";
+                                    for (Object t : lista) {
+                                            salida4 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                    }
+                                break;
                             }//Fin switch
-                            
                             break;
                         case 3:
+                            int opcionMedificaciones = 0;
+                            System.out.println("Que desea modificar (1. Casa/ 2. Edificio/ 3. Solar? ");
+                            opcionMedificaciones = leer.nextInt();
+                            switch(opcionMedificaciones){
+                                case 1: 
+                                    lista.add(newCasa());
+                                    System.out.println("Casa agregada exitosamente");
+                                break;
+                                case 2: 
+                                    lista.add(newEdificio());
+                                    System.out.println("Edificio agregada exitosamente");
+                                break;
+                                case 3: 
+                                    lista.add(newSolar());
+                                    System.out.println("Solar agregada exitosamente");
+                                break;
+                            }//Fin switch
                             break;
                         case 4:
+                            String salidaE = "";
+                            for (Object t : lista) {
+                                salidaE += "" + lista.indexOf(t) + ") " + t + "\n";
+                            }
+                            System.out.println("Que desea eliminar? ");
+                            int index = leer.nextInt();
+                            if (index >= 0 && index < lista.size()) {
+                                lista.remove(index);
+                            }else{
+                                System.out.println("El indice esta fuera de los limites");
+                            }
                             break;
                         
                     }

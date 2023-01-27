@@ -95,24 +95,181 @@ public class Lab2P2_DiegoMaradiaga {
                             }//Fin switch
                             break;
                         case 3:
+                            
                             int opcionMedificaciones = 0;
-                            System.out.println("Que desea modificar (1. Casa/ 2. Edificio/ 3. Solar? ");
+                            System.out.println("Que desea modificar (1. Casa/ 2. Edificio/ 3. Solar ? ");
                             opcionMedificaciones = leer.nextInt();
                             switch(opcionMedificaciones){
-                                case 1: 
-                                    lista.add(newCasa());
-                                    System.out.println("Casa agregada exitosamente");
-                                break;
+                                case 1:
+                                    String salida1 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Casa) {
+                                            salida1 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                    System.out.println(salida1);
+                                    System.out.println("Ingrese el numero de casa que desea modificar: ");
+                                    int opcionM1 = leer.nextInt();
+                                    
+                                    System.out.println("Modificara la casa # "+opcionM1);
+                                    System.out.println("");
+                                    System.out.println(""+
+                                            "1. Numero de casa\n"+
+                                            "2. Numero de Bloque\n" +
+                                            "3. Color\n" +
+                                            "4. Ancho\n" +
+                                            "5. Largo\n" +
+                                            "6. Numero de Baños\n" +
+                                            "7. Numero de Cuartos\n" +
+                                            "8. Estado de la casa\n" +
+                                            "9. Dueno de la casa\n" +
+                                            "Que desea modificar?");
+                                            int M1 = leer.nextInt();
+                                            switch (M1) {
+                                        case 1:
+                                            System.out.println("Ingrese el nuevo numero de casa ");
+                                            int NumCasa = leer.nextInt();
+                                            ((Casa)lista.get(opcionM1)).setNumCasa(NumCasa);
+                                        break;
+                                        case 2:
+                                            System.out.println("Ingrese el nuevo numero de bloque ");
+                                            int NumBloq = leer.nextInt();
+                                            ((Casa)lista.get(opcionM1)).setNumBloq(NumBloq);
+                                        break;
+                                        case 3:
+                                            Color C = JColorChooser.showDialog(null, "Ingrese el color que desea: ", Color.white);
+                                            ((Casa)lista.get(opcionM1)).setColor(C);
+                                        break;
+                                        case 4:
+                                            System.out.println("Ingrese el nuevo ancho ");
+                                            int ancho = leer.nextInt();
+                                            ((Casa)lista.get(opcionM1)).setAncho(ancho);
+                                        break;
+                                        case 5:
+                                            System.out.println("Ingrese el nuevo largo ");
+                                            int largo = leer.nextInt();
+                                            ((Casa)lista.get(opcionM1)).setLargo(largo);
+                                        break;
+                                        case 6:
+                                            System.out.println("Ingrese el nuevo numero de banos ");
+                                            int NumBanos = leer.nextInt();
+                                            ((Casa)lista.get(opcionM1)).setNumBanos(NumBanos);
+                                        break;
+                                        case 7:
+                                            System.out.println("Ingrese el nuevo numero de cuartos ");
+                                            int NumCuar = leer.nextInt();
+                                            ((Casa)lista.get(opcionM1)).setNumCuartos(NumCuar);
+                                        break;
+                                        case 8:
+                                            System.out.println("Ingrese el nuevo estado de la casa ");
+                                            String estadoC = leer.next();
+                                            ((Casa)lista.get(opcionM1)).setEstadoC(estadoC);
+                                        break;
+                                        case 9:
+                                            System.out.println("Ingrese el nuevo dueno de la casa ");
+                                            String Dueno = leer.next();
+                                            ((Casa)lista.get(opcionM1)).setDueno(Dueno);
+                                        break;
+                                    }       
+                                    break;
                                 case 2: 
-                                    lista.add(newEdificio());
-                                    System.out.println("Edificio agregada exitosamente");
+                                    String salida2 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Casa) {
+                                            salida2 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                    System.out.println(salida2);
+                                    System.out.println("Ingrese el numero de casa que desea modificar: ");
+                                    int opcionM2 = leer.nextInt();
+                                    
+                                    System.out.println("Modificara la casa # "+opcionM2);
+                                    System.out.println("");
+                                    System.out.println(""+
+                                            "1. Numero de casa\n"+
+                                            "2. Numero de Bloque\n" +
+                                            "3. Color\n" +
+                                            "4. Ancho\n" +
+                                            "5. Largo\n" +
+                                            "6. Numero de Baños\n" +
+                                            "7. Numero de Cuartos\n" +
+                                            "8. Estado de la casa\n" +
+                                            "9. Dueno de la casa\n" +
+                                            "Que desea modificar?");
+                                            int M2 = leer.nextInt();
+                                            switch (M2) {
+                                        case 1:
+                                            System.out.println("Ingrese el nuevo numero de casa ");
+                                            int NumCasa = leer.nextInt();
+                                            ((Casa)lista.get(opcionM2)).setNumCasa(NumCasa);
+                                        break;
+                                        case 2:
+                                            System.out.println("Ingrese el nuevo numero de bloque ");
+                                            int NumBloq = leer.nextInt();
+                                            ((Casa)lista.get(opcionM2)).setNumBloq(NumBloq);
+                                        break;
+                                        case 3:
+                                            Color C = JColorChooser.showDialog(null, "Ingrese el color que desea: ", Color.white);
+                                            ((Casa)lista.get(opcionM2)).setColor(C);
+                                        break;
+                                        case 4:
+                                            System.out.println("Ingrese el nuevo ancho ");
+                                            int ancho = leer.nextInt();
+                                            ((Casa)lista.get(opcionM2)).setAncho(ancho);
+                                        break;
+                                        case 5:
+                                            System.out.println("Ingrese el nuevo largo ");
+                                            int largo = leer.nextInt();
+                                            ((Casa)lista.get(opcionM2)).setLargo(largo);
+                                        break;
+                                        case 6:
+                                            System.out.println("Ingrese el nuevo numero de banos ");
+                                            int NumBanos = leer.nextInt();
+                                            ((Casa)lista.get(opcionM2)).setNumBanos(NumBanos);
+                                        break;
+                                        case 7:
+                                            System.out.println("Ingrese el nuevo numero de cuartos ");
+                                            int NumCuar = leer.nextInt();
+                                            ((Casa)lista.get(opcionM2)).setNumCuartos(NumCuar);
+                                        break;
+                                        case 8:
+                                            System.out.println("Ingrese el nuevo estado de la casa ");
+                                            String estadoC = leer.next();
+                                            ((Casa)lista.get(opcionM2)).setEstadoC(estadoC);
+                                        break;
+                                        case 9:
+                                            System.out.println("Ingrese el nuevo dueno de la casa ");
+                                            String Dueno = leer.next();
+                                            ((Casa)lista.get(opcionM2)).setDueno(Dueno);
+                                        break;
+                                    }
                                 break;
                                 case 3: 
-                                    lista.add(newSolar());
-                                    System.out.println("Solar agregada exitosamente");
+                                    String salida3 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Solar) {
+                                            salida3 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                    System.out.println("Ingrese el numero de solar que desea modificar: ");
                                 break;
-                            }//Fin switch
-                            break;
+                            
+                            
+                            
+                            
+                           
+                                    
+                                
+                                
+                                case 4:
+                                    
+                                break;
+                            }
+                            
+                            
+                            
+                            
+                           
                         case 4:
                             String salidaE = "";
                             for (Object t : lista) {

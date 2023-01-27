@@ -39,22 +39,55 @@ public class Lab2P2_DiegoMaradiaga {
                     System.out.println("");
                     switch (opcionc1){
                         case 1:
-                            int opcionedificaciones = 0;
+                            int opcionCedificaciones = 0;
                             System.out.println("Que desea crear (1. Casa/ 2. Edificio/ 3. Solar? ");
-                            opcionedificaciones = leer.nextInt();
-                            switch(opcionedificaciones){
+                            opcionCedificaciones = leer.nextInt();
+                            switch(opcionCedificaciones){
                                 case 1: 
                                     lista.add(newCasa());
+                                    System.out.println("Casa agregada exitosamente");
                                 break;
                                 case 2: 
                                     lista.add(newEdificio());
+                                    System.out.println("Edificio agregada exitosamente");
                                 break;
                                 case 3: 
                                     lista.add(newSolar());
+                                    System.out.println("Solar agregada exitosamente");
                                 break;
                             }//Fin switch
                             break;
                         case 2:
+                            int opcionLedificaciones = 0;
+                            System.out.println("Que desea listar (1. Casa/ 2. Edificio/ 3. Solar? ");
+                            opcionLedificaciones = leer.nextInt();
+                            switch(opcionLedificaciones){
+                                case 1:
+                                    String salida1 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Casa) {
+                                            salida1 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                    break;
+                                case 2: 
+                                    String salida2 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Edificio) {
+                                            salida2 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                break;
+                                case 3: 
+                                    String salida3 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Solar) {
+                                            salida3 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                break;
+                            }//Fin switch
+                            
                             break;
                         case 3:
                             break;

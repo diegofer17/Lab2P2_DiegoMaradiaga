@@ -5,15 +5,17 @@ public class Edificio {
     private int CantLocal;
     private String DxRefer;
     private String EstadoE;
+    private String Dueno;
 
     public Edificio() {
     }
 
-    public Edificio(int NumPisos, int CantLocal, String DxRefer, String EstadoE) {
+    public Edificio(int NumPisos, int CantLocal, String DxRefer, String EstadoE, String Dueno) {
         this.NumPisos = NumPisos;
         this.CantLocal = CantLocal;
         this.DxRefer = DxRefer;
         this.EstadoE = EstadoE;
+        this.Dueno = Dueno;
     }
 
     public int getNumPisos() {
@@ -48,10 +50,19 @@ public class Edificio {
         this.EstadoE = EstadoE;
     }
 
+    public String getDueno() {
+        return Dueno;
+    }
+
+    public void setDueno(String Dueno) {
+        this.Dueno = Dueno;
+    }
+
     @Override
     public String toString() {
-        return "Edificio{" + "NumPisos=" + NumPisos + ", CantLocal=" + CantLocal + ", DxRefer=" + DxRefer + ", EstadoE=" + EstadoE + '}';
+        return "Edificio{" + "NumPisos=" + NumPisos + ", CantLocal=" + CantLocal + ", DxRefer=" + DxRefer + ", EstadoE=" + EstadoE + ", Dueno=" + Dueno + '}';
     }
+
     
     
 }

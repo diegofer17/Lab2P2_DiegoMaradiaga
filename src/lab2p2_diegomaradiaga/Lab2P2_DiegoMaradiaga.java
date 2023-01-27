@@ -1,7 +1,9 @@
 package lab2p2_diegomaradiaga;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JColorChooser;
 
 public class Lab2P2_DiegoMaradiaga {
 
@@ -26,7 +28,40 @@ public class Lab2P2_DiegoMaradiaga {
 
             switch (opcion) {
                 case 1: {
-                    System.out.println("Solamente el usuario Admin puede ingresar");
+                    int opcionc1 = 0;
+                    System.out.println("1. Crear Casas/Edificios/Solares");
+                    System.out.println("2. Listar Casas/Edificios/Solares");
+                    System.out.println("3. Modificar Casas/Edificios/Solares");
+                    System.out.println("4. Vender Casas/Edificios/Solares");
+                    System.out.println("");
+                    System.out.print("Ingrese su opcion: ");
+                    opcionc1 = leer.nextInt();
+                    System.out.println("");
+                    switch (opcionc1){
+                        case 1:
+                            int opcionedificaciones = 0;
+                            System.out.println("Que desea crear (1. Casa/ 2. Edificio/ 3. Solar? ");
+                            opcionedificaciones = leer.nextInt();
+                            switch(opcionedificaciones){
+                                case 1: 
+                                    lista.add(newCasa());
+                                break;
+                                case 2: 
+                                    lista.add(newEdificio());
+                                break;
+                                case 3: 
+                                    lista.add(newSolar());
+                                break;
+                            }//Fin switch
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        
+                    }
                 }//Fin case 1
                 case 2: {
                     System.out.println("Solamente el usuario Admin puede ingresar");
@@ -133,5 +168,60 @@ public class Lab2P2_DiegoMaradiaga {
         } while (opcion != 4);//Fin DOWhile
 
     }//Fin main
+    
+    static Casa newCasa() {
+        Casa retorno1;
+        System.out.print("Ingrese el numero de la casa: ");
+        int NumCasa = leer.nextInt();
+        System.out.print("Ingrese el numero de bloque de la casa: ");
+        int NumBloq = leer.nextInt();
+        Color C = JColorChooser.showDialog(null, "Ingrese el color que desea: ", Color.white);
+        System.out.print("Ingrese el ancho de la casa: ");
+        int ancho = leer.nextInt();
+        System.out.print("Ingrese el largo de la casa: ");
+        int largo = leer.nextInt();
+        System.out.print("Ingrese el numero de banos de la casa: ");
+        int NumBanos = leer.nextInt();
+        System.out.print("Ingrese el numero de cuartos de la casa: ");
+        int NumCuartos = leer.nextInt();
+        System.out.print("Ingrese el estado de la casa (Lista, EnConstrucción, ConstrucciónenEspera, EnEsperadeDemolición): ");
+        String EstadoC = leer.next();
+        System.out.print("Ingrese el dueno de la casa: ");
+        String Dueno = leer.next();
+        retorno1 = new Casa(NumCasa, NumBloq, C, ancho, largo, NumBanos, NumCuartos, EstadoC, Dueno);
+
+        return retorno1;
+    }//Fin Crear Casa
+    
+    static Edificio newEdificio() {
+        Edificio retorno2;
+        System.out.print("Ingrese el numero de pisos: ");
+        int NumPisos = leer.nextInt();
+        System.out.print("Ingrese la cantidad de locales: ");
+        int CantLocal = leer.nextInt();
+        System.out.println("Ingrese la direccion por referencia del edificio: ");
+        String DxRefer = leer.next();
+        System.out.print("Ingrese el estado de la casa (Lista, EnConstrucción, ConstrucciónenEspera, EnEsperadeDemolición): ");
+        String EstadoC = leer.next();
+        System.out.print("Ingrese el dueno de la casa: ");
+        String Dueno = leer.next(); 
+        
+        retorno2 = new Edificio(NumPisos, CantLocal, DxRefer, EstadoC, Dueno);
+        return retorno2;
+    }//Fin Crear Edificio
+    
+    static Solar newSolar() {
+        Solar retorno3;
+        System.out.print("Ingrese el ancho del solar: ");
+        int ancho = leer.nextInt();
+        System.out.print("Ingrese el largo del solar: ");
+        int largo = leer.nextInt();
+        System.out.print("Ingrese el dueno de la casa: ");
+        String Dueno = leer.next();
+        
+        retorno3 = new Solar(ancho, largo, largo, Dueno);
+        return retorno3;
+    }//Fin Crear Solar
+    
 }//Fin clase
 

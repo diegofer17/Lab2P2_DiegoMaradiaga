@@ -11,11 +11,12 @@ public class Casa {
     private int NumBanos;
     private int NumCuartos;
     private String EstadoC;
+    private String Dueno;
 
     public Casa() {
     }
 
-    public Casa(int NumCasa, int NumBloq, Color color, int ancho, int largo, int NumBanos, int NumCuartos, String EstadoC) {
+    public Casa(int NumCasa, int NumBloq, Color color, int ancho, int largo, int NumBanos, int NumCuartos, String EstadoC, String Dueno) {
         this.NumCasa = NumCasa;
         this.NumBloq = NumBloq;
         this.color = color;
@@ -24,6 +25,7 @@ public class Casa {
         this.NumBanos = NumBanos;
         this.NumCuartos = NumCuartos;
         this.EstadoC = EstadoC;
+        this.Dueno = Dueno;
     }
 
     public int getNumCasa() {
@@ -89,12 +91,18 @@ public class Casa {
     public void setEstadoC(String EstadoC) {
         this.EstadoC = EstadoC;
     }
-    
-    
-    
+
+    public String getDueno() {
+        return Dueno;
+    }
+
+    public void setDueno(String Dueno) {
+        this.Dueno = Dueno;
+    }
+
     @Override
     public String toString() {
-        return "Casa{" + "NumCasa=" + NumCasa + ", NumBloq=" + NumBloq + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", NumBanos=" + NumBanos + ", NumCuartos=" + NumCuartos + '}';
+        return "Casa{" + "NumCasa=" + NumCasa + ", NumBloq=" + NumBloq + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", NumBanos=" + NumBanos + ", NumCuartos=" + NumCuartos + ", EstadoC=" + EstadoC + ", Dueno=" + Dueno + '}';
     }
     
     

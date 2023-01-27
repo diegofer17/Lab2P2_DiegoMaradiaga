@@ -4,14 +4,16 @@ public class Solar {
     private int anchoS;
     private int largoS;
     private int areaS;
+    private String Dueno;
 
     public Solar() {
     }
 
-    public Solar(int anchoS, int largoS, int areaS) {
+    public Solar(int anchoS, int largoS, int areaS, String Dueno) {
         this.anchoS = anchoS;
         this.largoS = largoS;
         this.areaS = areaS;
+        this.Dueno = Dueno;
     }
 
     public int getAnchoS() {
@@ -38,11 +40,17 @@ public class Solar {
         this.areaS = areaS;
     }
 
+    public String getDueno() {
+        return Dueno;
+    }
+
+    public void setDueno(String Dueno) {
+        this.Dueno = Dueno;
+    }
+
     @Override
     public String toString() {
-        return "Solar{" + "anchoS=" + anchoS + ", largoS=" + largoS + ", areaS=" + areaS + '}';
-    }
-    
-    
+        return "Solar{" + "anchoS=" + anchoS + ", largoS=" + largoS + ", areaS=" + areaS + ", Dueno=" + Dueno + '}';
+    } 
     
 }

@@ -222,16 +222,43 @@ public class Lab2P2_DiegoMaradiaga {
                                     }
                                 break;
                                 case 3: 
+                                    String salida3 = "";
+                                    for (Object t : lista) {
+                                        if (t instanceof Solar) {
+                                            salida3 += "" + lista.indexOf(t) + ") " + t + "\n";
+                                        }
+                                    }
+                                    System.out.println(salida3);
+                                    System.out.println("Ingrese el numero de solar que desea modificar: ");
+                                    int opcionM3 = leer.nextInt();
                                     
+                                    System.out.println("Modificara el solar # "+opcionM3);
+                                    System.out.println("");
+                                    System.out.println(""+
+                                            "1. Ancho del solar\n"+
+                                            "2. Largo del solar\n" +
+                                            "3. Dueno del solar\n" +
+                                            "Que desea modificar?");
+                                            int M3 = leer.nextInt();
+                                            switch (M3) {
+                                        case 1:
+                                            System.out.println("Ingrese el nuevo ancho del solar ");
+                                            int anchoS = leer.nextInt();
+                                            ((Solar)lista.get(opcionM3)).setAnchoS(anchoS);
+                                        break;
+                                        case 2:
+                                            System.out.println("Ingrese el nuevo largo del solar ");
+                                            int largoS = leer.nextInt();
+                                            ((Solar)lista.get(opcionM3)).setLargoS(largoS);
+                                        break;
+                                        case 3:
+                                            System.out.println("Ingrese el nuevo dueno del solar ");
+                                            String Dueno = leer.next();
+                                            ((Solar)lista.get(opcionM3)).setDueno(Dueno);
+                                        break;
+                                        
+                                    }
                                 break;
-                            
-                            
-                            
-                            
-                           
-                                    
-                                
-                                
                                 case 4:
                                     
                                 break;
@@ -413,7 +440,7 @@ public class Lab2P2_DiegoMaradiaga {
         System.out.print("Ingrese el dueno de la casa: ");
         String Dueno = leer.next();
         
-        retorno3 = new Solar(ancho, largo, largo, Dueno);
+        retorno3 = new Solar(ancho, largo, largo*ancho, Dueno);
         return retorno3;
     }//Fin Crear Solar
     

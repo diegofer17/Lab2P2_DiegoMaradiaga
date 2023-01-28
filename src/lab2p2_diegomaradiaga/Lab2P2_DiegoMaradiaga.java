@@ -175,83 +175,54 @@ public class Lab2P2_DiegoMaradiaga {
                                 case 2: 
                                     String salida2 = "";
                                     for (Object t : lista) {
-                                        if (t instanceof Casa) {
+                                        if (t instanceof Edificio) {
                                             salida2 += "" + lista.indexOf(t) + ") " + t + "\n";
                                         }
                                     }
                                     System.out.println(salida2);
-                                    System.out.println("Ingrese el numero de casa que desea modificar: ");
+                                    System.out.println("Ingrese el numero de edificio que desea modificar: ");
                                     int opcionM2 = leer.nextInt();
                                     
-                                    System.out.println("Modificara la casa # "+opcionM2);
+                                    System.out.println("Modificara el edificio # "+opcionM2);
                                     System.out.println("");
                                     System.out.println(""+
-                                            "1. Numero de casa\n"+
-                                            "2. Numero de Bloque\n" +
-                                            "3. Color\n" +
-                                            "4. Ancho\n" +
-                                            "5. Largo\n" +
-                                            "6. Numero de Baños\n" +
-                                            "7. Numero de Cuartos\n" +
-                                            "8. Estado de la casa\n" +
-                                            "9. Dueno de la casa\n" +
+                                            "1. Numero de pisos\n"+
+                                            "2. Cantidad de locales\n" +
+                                            "3. Direccion por referencia\n" +
+                                            "4. Estado del edificio\n" +
+                                            "5. Dueno del edificio\n" +
                                             "Que desea modificar?");
                                             int M2 = leer.nextInt();
                                             switch (M2) {
                                         case 1:
-                                            System.out.println("Ingrese el nuevo numero de casa ");
-                                            int NumCasa = leer.nextInt();
-                                            ((Casa)lista.get(opcionM2)).setNumCasa(NumCasa);
+                                            System.out.println("Ingrese el nuevo numero de pisos ");
+                                            int NumPisos = leer.nextInt();
+                                            ((Edificio)lista.get(opcionM2)).setNumPisos(NumPisos);
                                         break;
                                         case 2:
-                                            System.out.println("Ingrese el nuevo numero de bloque ");
-                                            int NumBloq = leer.nextInt();
-                                            ((Casa)lista.get(opcionM2)).setNumBloq(NumBloq);
+                                            System.out.println("Ingrese la nueva cantidad de locales ");
+                                            int CantLocal = leer.nextInt();
+                                            ((Edificio)lista.get(opcionM2)).setCantLocal(CantLocal);
                                         break;
                                         case 3:
-                                            Color C = JColorChooser.showDialog(null, "Ingrese el color que desea: ", Color.white);
-                                            ((Casa)lista.get(opcionM2)).setColor(C);
+                                            System.out.println("Ingrese la nueva direccion ");
+                                            String DxRefer = leer.next();
+                                            ((Edificio)lista.get(opcionM2)).setDxRefer(DxRefer);
                                         break;
                                         case 4:
-                                            System.out.println("Ingrese el nuevo ancho ");
-                                            int ancho = leer.nextInt();
-                                            ((Casa)lista.get(opcionM2)).setAncho(ancho);
+                                            System.out.println("Ingrese el nuevo estado de la casa ");
+                                            String estadoE = leer.next();
+                                            ((Edificio)lista.get(opcionM2)).setEstadoE(estadoE);
                                         break;
                                         case 5:
-                                            System.out.println("Ingrese el nuevo largo ");
-                                            int largo = leer.nextInt();
-                                            ((Casa)lista.get(opcionM2)).setLargo(largo);
-                                        break;
-                                        case 6:
-                                            System.out.println("Ingrese el nuevo numero de banos ");
-                                            int NumBanos = leer.nextInt();
-                                            ((Casa)lista.get(opcionM2)).setNumBanos(NumBanos);
-                                        break;
-                                        case 7:
-                                            System.out.println("Ingrese el nuevo numero de cuartos ");
-                                            int NumCuar = leer.nextInt();
-                                            ((Casa)lista.get(opcionM2)).setNumCuartos(NumCuar);
-                                        break;
-                                        case 8:
-                                            System.out.println("Ingrese el nuevo estado de la casa ");
-                                            String estadoC = leer.next();
-                                            ((Casa)lista.get(opcionM2)).setEstadoC(estadoC);
-                                        break;
-                                        case 9:
                                             System.out.println("Ingrese el nuevo dueno de la casa ");
                                             String Dueno = leer.next();
-                                            ((Casa)lista.get(opcionM2)).setDueno(Dueno);
+                                            ((Edificio)lista.get(opcionM2)).setDueno(Dueno);
                                         break;
                                     }
                                 break;
                                 case 3: 
-                                    String salida3 = "";
-                                    for (Object t : lista) {
-                                        if (t instanceof Solar) {
-                                            salida3 += "" + lista.indexOf(t) + ") " + t + "\n";
-                                        }
-                                    }
-                                    System.out.println("Ingrese el numero de solar que desea modificar: ");
+                                    
                                 break;
                             
                             

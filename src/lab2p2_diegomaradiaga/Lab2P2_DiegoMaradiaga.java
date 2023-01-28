@@ -279,6 +279,17 @@ public class Lab2P2_DiegoMaradiaga {
                                 System.out.println("El indice esta fuera de los limites");
                             }
                         break;
+                        case 5:
+                            String salidaC = "";
+                            for (Object t : lista) {
+                                salidaC += "" + lista.indexOf(t) + ") " + t + "\n";
+                            }
+                            System.out.println(salidaC);
+                            System.out.println("Que edificacion tendra un nuevo dueno? ");
+                            int edificio = leer.nextInt();
+                            
+                            
+                        break;
                         
                     }//Fin switch
                 }break;//Fin case 1
@@ -306,10 +317,12 @@ public class Lab2P2_DiegoMaradiaga {
                             username = leer.next();
                             System.out.println("Ingrese la contrasena: ");
                             contra = leer.next();
-
+                            boolean flag;
+                           
                             for (int i = 0; i < usuarios.size(); i++) {
                                 if (username.equals("admin") && contra.equals("admin1234")) {
-                                    System.out.println("Ha iniciado sesion correctamente");
+                                    flag = true;
+                                    System.out.println("El admin ha iniciado sesion correctamente");
                                     System.out.println("");
                                     System.out.println("1. Registro de Inmbueble/Solar ");
                                     System.out.println("2. Manejo de Estados           ");
@@ -318,7 +331,8 @@ public class Lab2P2_DiegoMaradiaga {
                                     System.out.println("");
                                     System.out.print("Ingrese su opcion: ");
                                     opcion = leer.nextInt();
-                                }else if(usuarios.get(i) instanceof Usuario){
+                                }else if(usuarios.get(i).equals(username) && usuarios.get(i).equals(contra)){
+                                    flag = true;
                                     System.out.println("Ha iniciado sesion correctamente");
                                     System.out.println("");
                                     System.out.println("1. Registro de Inmbueble/Solar ");
@@ -331,27 +345,31 @@ public class Lab2P2_DiegoMaradiaga {
 
                                     switch (opcion) {
                                         case 1:
-                                            System.out.println("LISTA");
+                                            
                                             break;
                                         case 2:
                                             System.out.println("Esta opcion no es valida para usted, solo el admin puede ingresar");
                                             break;
                                         case 3:
-
+                                            
                                             break;
                                         case 4:
                                             System.exit(0);
                                             break;
                                     }//Fin switch
                                 }else{
-                                    System.out.println("El usuario ingresado no es valido");
+                                    flag = false;
+                                    System.out.println("Usuario ingresado no valido");
                             }
                             }//Fin for case LOG IN
                         break;//case 1 LOG IN
                         case 2:
-                            int f = 0;
-                            /*LogIn(f);*/
-                    break;//case 2 SIGN UP
+                            System.out.println("");
+                            System.out.println("SIGN UP");
+                            usuarios.add(newUser());
+                            
+                            
+                        break;//case 2 SIGN UP
                     }//Fin switchcase3
                 
                 }break;// case 3
@@ -418,24 +436,19 @@ public class Lab2P2_DiegoMaradiaga {
         return retorno3;
     }//Fin Crear Solar
     
-    /*static int LogIn(int flag) {
-        System.out.println("1. Log In"
-                + "2. Sign Up"
-                + "3. Log Out");
-        int opcionL = leer.nextInt();
-
-        switch (opcionL) {
-            case 1:
-
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-        }
-
-    }*/
+    static Usuario newUser() {
+        Usuario retorno4;
+        System.out.println("Ingrese su nombre: ");
+        String name = leer.next();
+        System.out.println("Ingrese la edad: ");
+        int age = leer.nextInt();
+        System.out.println("Ingrese un username: ");
+        String Username = leer.next();
+        System.out.println("Ingrese una contrasena: ");
+        String contra = leer.next();
+        
+        retorno4 = new Usuario(name, age, Username, contra);
+        return retorno4;
+    }
 }//Fin clase
 

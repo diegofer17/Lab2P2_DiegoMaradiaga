@@ -32,7 +32,8 @@ public class Lab2P2_DiegoMaradiaga {
                     System.out.println("1. Crear Casas/Edificios/Solares");
                     System.out.println("2. Listar Casas/Edificios/Solares");
                     System.out.println("3. Modificar Casas/Edificios/Solares");
-                    System.out.println("4. Comprar Casas/Edificios/Solares");
+                    System.out.println("4. Eliminar Casas/Edificios/Solares");
+                    System.out.println("5. Comprar Casas/Edificios/Solares");
                     System.out.println("");
                     System.out.print("Ingrese su opcion: ");
                     opcionc1 = leer.nextInt();
@@ -40,7 +41,7 @@ public class Lab2P2_DiegoMaradiaga {
                     switch (opcionc1){
                         case 1:
                             int opcionCedificaciones = 0;
-                            System.out.println("Que desea crear (1. Casa/ 2. Edificio/ 3. Solar? ");
+                            System.out.println("Que desea crear (1. Casa/ 2. Edificio/ 3. Solar)? ");
                             opcionCedificaciones = leer.nextInt();
                             switch(opcionCedificaciones){
                                 case 1: 
@@ -49,17 +50,17 @@ public class Lab2P2_DiegoMaradiaga {
                                 break;
                                 case 2: 
                                     lista.add(newEdificio());
-                                    System.out.println("Edificio agregada exitosamente");
+                                    System.out.println("Edificio agregado exitosamente");
                                 break;
                                 case 3: 
                                     lista.add(newSolar());
-                                    System.out.println("Solar agregada exitosamente");
+                                    System.out.println("Solar agregado exitosamente");
                                 break;
                             }//Fin switch
-                            break;
+                        break;
                         case 2:
                             int opcionLedificaciones = 0;
-                            System.out.println("Que desea listar (1. Casa/ 2. Edificio/ 3. Solar / 4.TODO? ");
+                            System.out.println("Que desea listar (1. Casa/ 2. Edificio/ 3. Solar / 4.TODO)? ");
                             opcionLedificaciones = leer.nextInt();
                             switch(opcionLedificaciones){
                                 case 1:
@@ -69,6 +70,7 @@ public class Lab2P2_DiegoMaradiaga {
                                             salida1 += "" + lista.indexOf(t) + ") " + t + "\n";
                                         }
                                     }
+                                    System.out.println(salida1);
                                     break;
                                 case 2: 
                                     String salida2 = "";
@@ -77,6 +79,7 @@ public class Lab2P2_DiegoMaradiaga {
                                             salida2 += "" + lista.indexOf(t) + ") " + t + "\n";
                                         }
                                     }
+                                    System.out.println(salida2);
                                 break;
                                 case 3: 
                                     String salida3 = "";
@@ -85,19 +88,20 @@ public class Lab2P2_DiegoMaradiaga {
                                             salida3 += "" + lista.indexOf(t) + ") " + t + "\n";
                                         }
                                     }
+                                    System.out.println(salida3);
                                 break;
                                 case 4:
                                     String salida4 = "";
                                     for (Object t : lista) {
                                             salida4 += "" + lista.indexOf(t) + ") " + t + "\n";
                                     }
+                                    System.out.println(salida4);
                                 break;
                             }//Fin switch
-                            break;
-                        case 3:
-                            
+                        break;
+                        case 3:   
                             int opcionMedificaciones = 0;
-                            System.out.println("Que desea modificar (1. Casa/ 2. Edificio/ 3. Solar ? ");
+                            System.out.println("Que desea modificar (1. Casa/ 2. Edificio/ 3. Solar)? ");
                             opcionMedificaciones = leer.nextInt();
                             switch(opcionMedificaciones){
                                 case 1:
@@ -171,7 +175,7 @@ public class Lab2P2_DiegoMaradiaga {
                                             ((Casa)lista.get(opcionM1)).setDueno(Dueno);
                                         break;
                                     }       
-                                    break;
+                                break;
                                 case 2: 
                                     String salida2 = "";
                                     for (Object t : lista) {
@@ -259,20 +263,14 @@ public class Lab2P2_DiegoMaradiaga {
                                         
                                     }
                                 break;
-                                case 4:
-                                    
-                                break;
-                            }
-                            
-                            
-                            
-                            
-                           
+                            }//Fin de switch
+                        break;    
                         case 4:
                             String salidaE = "";
                             for (Object t : lista) {
                                 salidaE += "" + lista.indexOf(t) + ") " + t + "\n";
                             }
+                            System.out.println(salidaE);
                             System.out.println("Que desea eliminar? ");
                             int index = leer.nextInt();
                             if (index >= 0 && index < lista.size()) {
@@ -280,13 +278,13 @@ public class Lab2P2_DiegoMaradiaga {
                             }else{
                                 System.out.println("El indice esta fuera de los limites");
                             }
-                            break;
+                        break;
                         
-                    }
-                }//Fin case 1
+                    }//Fin switch
+                }break;//Fin case 1
                 case 2: {
                     System.out.println("Solamente el usuario Admin puede ingresar");
-                }//Fin case 2
+                }break;//Fin case 2
                 case 3: {
                     int opcioncase3 = 0;
                     System.out.println("1. Log In");
@@ -351,32 +349,8 @@ public class Lab2P2_DiegoMaradiaga {
                             }//Fin for case LOG IN
                         break;//case 1 LOG IN
                         case 2:
-                            System.out.println("");
-                            System.out.println("SIGN UP");
-                            System.out.print("Ingrese su nombre: ");
-                            nombre = leer.next();
-                            System.out.print("Ingrese su edad: ");
-                            edad = leer.nextInt();
-                            System.out.print("Ingrese un username: ");
-                            username = leer.next();
-                            System.out.print("Ingrese una contrasena: ");
-                            contra = leer.next();
-                            
-                            usuarios.add(new Usuario(nombre, edad, username, contra));
-                            
-                            System.out.println("Se ha registrado correctamente");
-                            System.out.println("");
-                            System.out.println("1. Registro de Inmbueble/Solar ");
-                            System.out.println("2. Manejo de Estados           ");
-                            System.out.println("3. Log In              ");
-                            System.out.println("4. Salir ");
-                            System.out.println("");
-                            System.out.print("Ingrese su opcion: ");
-                            opcion = leer.nextInt();                    
-                            
-                            switch (opcion){
-                                
-                            }//Fin switch
+                            int f = 0;
+                            /*LogIn(f);*/
                     break;//case 2 SIGN UP
                     }//Fin switchcase3
                 
@@ -384,7 +358,7 @@ public class Lab2P2_DiegoMaradiaga {
                 
                 default: {
                     System.exit(0);
-                }    
+                }   
             }//Fin switchGrande
         } while (opcion != 4);//Fin DOWhile
 
@@ -444,5 +418,24 @@ public class Lab2P2_DiegoMaradiaga {
         return retorno3;
     }//Fin Crear Solar
     
+    /*static int LogIn(int flag) {
+        System.out.println("1. Log In"
+                + "2. Sign Up"
+                + "3. Log Out");
+        int opcionL = leer.nextInt();
+
+        switch (opcionL) {
+            case 1:
+
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+        }
+
+    }*/
 }//Fin clase
 
